@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1 #{title}
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='title') Title:
+      input#title.form-control(type='text', placeholder='Your message title here.' required= 'true' name='title' value=(undefined===message ? '' : message.title))
+    
+    div.form-group
+      label(for='content') Content:
+      input#content.form-control(type='text', required= 'true' name='content' value=(undefined===message ? '' : message.content) )
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors
+   ul
+    for error in errors
+     li!= error.msg
+
+
