@@ -4,24 +4,22 @@ const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
   first_name: { type: String, required: true, maxLength: 100 },
-  family_name: { type: String, required: true, maxLength: 100 },
-  username: { email_only: { type: String, lowercase: true, trim: true },
+  last_name: { type: String, required: true, maxLength: 100 },
+  username: { type: String, lowercase: true, trim: true },
   password: { type: String, required: true },
   membership_status: {
         type: String,
         enum: ["Newbie", "Stalite", "Exclusive"],
-        default: "",
-});
+        default: "Newbie" },
+  });
 
 // Virtual for user's full name
 UserSchema.virtual("name").get(function () {
-  // To avoid errors in cases where a user does not have either a family name or first name
-  // We want to make sure we handle the exception by returning an empty string for that case
   let fullname = "";
-  if (this.first_name && this.family_name) {
-    fullname = `${this.family_name}, ${this.first_name}`;
+  if (this.first_name && this.last_name) {
+    fullname = `${this.last_name}, ${this.first_name}`;
   }
-  if (!this.first_name || !this.family_name) {
+  if (!this.first_name || !this.last_name) {
     fullname = "";
   }
   return fullname;

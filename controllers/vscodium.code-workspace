@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../../blog-api"
+		},
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../language-api"
+		},
+		{
+			"path": "../../chat-app"
+		}
+	],
+	"settings": {
+		"terminal.explorerKind": "external"
+	}
+}

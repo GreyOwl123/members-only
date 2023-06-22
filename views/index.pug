@@ -2,4 +2,14 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Welcome to #[em Exclusive ClubHouse], a secure online chatroom where anonymous users post their wildest thoughts.
+
+  h4 ECH Usage Guidelines
+
+  p To use this site, you must Sign Up, Log In and become a Member. Only then can you view posts from other Users.
+  
+  p To Sign Up 
+  a(href="auth/user/signup"): button(type='button') Sign Up 
+
+  p If you have an account already, Log In
+  a(href="auth/user/login"): button(type='button') Log In  

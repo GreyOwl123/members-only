@@ -3,11 +3,14 @@ extends layout
 block content
   h1 #{title}
 
-  form(method='POST' action='')
-    div.form-group
-      label(for='passcode') Account Validation:
-      input#name.form-control(type='number' name='passcode' required='true' value=(undefined===user ? '' : user.passcode))
-    button.btn.btn-primary(type='submit') Submit
+  p Kindly input the number shown below
+  h1= randomNumber()
+
+   form(method='POST' action='')
+     div.form-group
+       label(for='passcode') Account Validation:
+       input#name.form-control(type='number' name='passcode' required='true' value=(undefined===user ? '' : user.passcode))
+     button.btn.btn-primary(type='submit') Submit
 
   if errors
    ul

@@ -6,8 +6,8 @@ const MessageSchema = new Schema({
   title: { type: String, required: true },
   user: { type: Schema.Types.ObjectId, ref: "User" },
   content: { type: String, required: true },
-  timestamp: { createdAt: 'created_at',
-               updatedAt: 'updated_at' },
+ // timestamp: { createdAt: 'created_at',
+ //            updatedAt: 'updated_at' },
 });
 
 // Virtual for author's URL
